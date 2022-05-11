@@ -12,15 +12,22 @@ body{
     justify-content: center;
 }
 
+/* Página inicial */
+
 .MenuInicial{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin-top: 180px;
+    background-color: #FB6B6B;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
 }
 
 .MenuInicial>div{
@@ -40,10 +47,8 @@ body{
 .MenuInicial h1{
     font-family: 'Righteous';
     font-style: normal;
-
     font-weight: 400;
     font-size: 36px;
-
     color: #FFFFFF;
 
     margin-bottom: 40px;
@@ -64,6 +69,85 @@ body{
     border-radius: 5px;
 }
 
-.MenuInicial.escondido{
-    display: none;
+/* Página inicial */
+
+/* Página Cards */
+
+main{
+    display: flex;
+    flex-direction: column;
+    z-index: -2;
+}
+
+header{
+    display: flex;
+    align-items: center;
+        
+    font-family: 'Righteous';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    color: #FFFFFF;
+
+    margin: 40px auto;
+}
+
+header img{
+    width: 60px;
+    height: 70px;
+
+    margin-right: 20px;
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 300px;
+    height: 65px;
+
+    margin-bottom: 25px;
+
+    padding: 20px;
+
+    background-color: white;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    z-index: -2;
+}
+
+.card h4{
+    font-family: 'Recursive', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.card ion-icon{
+    font-size: 35px;
+    z-index: -2;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    z-index: -1;
+
+    width: 100%;
+    min-height: 70px;
+
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p{
+    font-family: 'Recursive';
+    font-weight: 400;
+    font-size: 18px;
 }
