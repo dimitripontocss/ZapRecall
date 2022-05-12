@@ -1,4 +1,8 @@
 import Header from "./Header"
+import Content from "./Content"
+import Footer from "./Footer"
+import React from "react"
+
 
 export default function Menu(){
     const card = [
@@ -35,20 +39,12 @@ export default function Menu(){
             answer:"8. dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
         }
     ]
+    const [counter,setCounter] = React.useState(0);
     return(
         <main>
             <Header />
-            <div className="Content">
-                {card.map((value,index) => <div key={index} className="card">
-                                                <h4>Pergunta {index+1}</h4>
-                                                <ion-icon name="play-outline"></ion-icon>
-                                            </div>
-                                            )
-                }
-            </div>
-            <footer>
-                <p>0/{card.length} CONCLUÍDOS</p>
-            </footer>
+            <Content card ={card} counter={counter} setCounter={setCounter}/>
+            <Footer card={card} counter={counter}/>
         </main>
         
     )
