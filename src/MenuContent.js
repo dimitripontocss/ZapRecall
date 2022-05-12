@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Content({card, counter, setCounter}){
+export default function MenuContent({card, counter, setCounter}){
 const [opened,setOpened] = React.useState(null)
 const [fliped, setFliped] = React.useState(null)
     function open(index){

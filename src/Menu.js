@@ -1,5 +1,5 @@
 import Header from "./Header"
-import Content from "./Content"
+import MenuContent from "./MenuContent"
 import Footer from "./Footer"
 import React from "react"
 
@@ -43,7 +43,7 @@ export default function Menu(){
     return(
         <main>
             <Header />
-            <Content card ={card} counter={counter} setCounter={setCounter}/>
+            <MenuContent card ={card} counter={counter} setCounter={setCounter}/>
             <Footer card={card} counter={counter}/>
         </main>
         
