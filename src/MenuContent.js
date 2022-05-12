@@ -1,4 +1,5 @@
 import React from "react"
+import curvedArrow from "./assets/setinha.png"
 
 export default function MenuContent({card, counter, setCounter}){
 const [opened,setOpened] = React.useState(null)
@@ -37,7 +38,7 @@ function OpenedCard({card, index, reveal, fliped}){
         fliped !== index ?
         <div key={index} className="open-card">
             <h4>{card[index].question}</h4>
-            <img onClick={()=>reveal(index)} src="/assets/setinha.png" alt="Minha Figura"></img>
+            <img onClick={()=>reveal(index)} src={curvedArrow} alt="Minha Figura"></img>
         </div> 
         : 
         <div key={index} className="revealed-card">
