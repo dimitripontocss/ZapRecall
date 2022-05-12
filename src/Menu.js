@@ -1,3 +1,5 @@
+import Header from "./Header"
+
 export default function Menu(){
     const card = [
         {
@@ -35,18 +37,15 @@ export default function Menu(){
     ]
     return(
         <main>
-            <header>
-                <img src="/assets/logo.png" alt="Logo"/>
-                <h1>ZapRecall</h1>
-            </header>
-
-            {card.map((value,index) => <div key={index} className="card">
-                                            <h4>Pergunta {index+1}</h4>
-                                            <ion-icon name="play-outline"></ion-icon>
-                                        </div>
-                                        )
-            }
-
+            <Header />
+            <div className="Content">
+                {card.map((value,index) => <div key={index} className="card">
+                                                <h4>Pergunta {index+1}</h4>
+                                                <ion-icon name="play-outline"></ion-icon>
+                                            </div>
+                                            )
+                }
+            </div>
             <footer>
                 <p>0/{card.length} CONCLUÍDOS</p>
             </footer>

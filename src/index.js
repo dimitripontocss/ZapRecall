@@ -5,10 +5,13 @@ import Menu from './Menu';
 
 
 function Content(){
+    const [display, setDisplay] = React.useState(true);
+    
     return(
         <div>
-            <Inicio />
-            <Menu />
+            {
+                display ? <Inicio display = {display} setDisplay = {setDisplay}/> : <Menu />
+            }
         </div>
   )
   }

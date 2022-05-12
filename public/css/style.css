@@ -76,7 +76,6 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    z-index: -2;
 }
 
 header{
@@ -99,6 +98,10 @@ header img{
     margin-right: 20px;
 }
 
+.Content{
+    margin-bottom: 50px;
+}
+
 .card{
     display: flex;
     justify-content: space-between;
@@ -114,8 +117,6 @@ header img{
     background-color: white;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-
-    z-index: -2;
 }
 
 .card h4{
@@ -126,15 +127,12 @@ header img{
 
 .card ion-icon{
     font-size: 35px;
-    z-index: -2;
 }
 
 footer{
     position: fixed;
     bottom: 0;
     left: 0;
-
-    z-index: -1;
 
     width: 100%;
     min-height: 70px;
