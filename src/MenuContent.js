@@ -1,10 +1,9 @@
 import React from "react"
 import curvedArrow from "./assets/setinha.png"
 
-export default function MenuContent({card, counter, setCounter}){
+export default function MenuContent({card, counter, setCounter,completed,setCompleted,correct,setCorrect}){
 const [opened,setOpened] = React.useState(null)
 const [fliped, setFliped] = React.useState(null)
-const [completed, setCompleted] = React.useState([])
     
     function open(index){
         setOpened(index)
@@ -15,21 +14,31 @@ const [completed, setCompleted] = React.useState([])
     }
     function complete(index, code){
         const auxComplete = [...completed, {pos:index, code:code}]
-        setCompleted(auxComplete)
+        setCompleted(auxComplete);
+        setCounter(counter + 1);
+        if(code === "zap" || code === "quase"){
+            setCorrect(correct + 1);
+        }
     }
-    console.log(completed)
     return(
         <div className="Content">
             
             {card.map((value,index) =>
-                {if(index !== opened){
-                    
-                  return  <DefaultCard index={index} open={open}/>
-                    
-                }else{
-                    return <OpenedCard card ={card} index={index} reveal={reveal} fliped={fliped} complete={complete}/>
-                }}
+                {   
+                    for(let i=0;i<completed.length;i++){
+                        if(completed.length !== 0){
+                            if(index === completed[i].pos){
+                                return <ResultCard completed={completed[i]} index={index}/>
+                            }
+                        }
+                    }   
+                    if(index !== opened){
+                        return  <DefaultCard index={index} open={open}/>    
+                    }else{
+                        return <OpenedCard card ={card} index={index} reveal={reveal} fliped={fliped} complete={complete}/>
+                    }
                 
+                }
              )
             }
             </div>
@@ -63,6 +72,41 @@ function OpenedCard({card, index, reveal, fliped ,complete}){
             
         </div>
 
+    )
+}
+
+function ResultCard({completed,index}){
+    return(
+        <>
+            {completed.code === "zap" ? <Zap index={index}/> : completed.code === "quase" ? <Quase index={index}/> : <Erro index={index}/>}
+        </>       
+    )
+}
+
+function Zap({index}){
+    return(
+        <div key={index} className="card correct">
+                <h4>Pergunta {index+1}</h4>
+                <ion-icon name="checkmark-circle"></ion-icon>
+        </div> 
+    )
+}
+
+function Quase({index}){
+    return(
+        <div key={index} className="card almost">
+                <h4>Pergunta {index+1}</h4>
+                <ion-icon name="help-circle"></ion-icon>
+        </div> 
+    )
+}
+
+function Erro({index}){
+    return(
+        <div key={index} className="card error">
+                <h4>Pergunta {index+1}</h4>
+                <ion-icon name="close-circle"></ion-icon>
+        </div> 
     )
 }
 

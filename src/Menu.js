@@ -39,12 +39,15 @@ export default function Menu(){
             answer:"8. dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
         }
     ]
+
     const [counter,setCounter] = React.useState(0);
+    const [completed, setCompleted] = React.useState([])
+    const [correct,setCorrect] = React.useState(0);
     return(
         <main>
             <Header />
-            <MenuContent card ={card} counter={counter} setCounter={setCounter}/>
-            <Footer card={card} counter={counter}/>
+            <MenuContent card ={card} counter={counter} setCounter={setCounter} completed={completed} setCompleted={setCompleted} correct={correct} setCorrect={setCorrect}/>
+            <Footer card={card} counter={counter} completed={completed} correct={correct}/>
         </main>
         
     )
