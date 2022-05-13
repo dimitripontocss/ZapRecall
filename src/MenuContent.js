@@ -1,9 +1,7 @@
 import React from "react"
 import curvedArrow from "./assets/setinha.png"
 
-export default function MenuContent({card, counter, setCounter,completed,setCompleted,correct,setCorrect}){
-const [opened,setOpened] = React.useState(null)
-const [fliped, setFliped] = React.useState(null)
+export default function MenuContent({card, counter, setCounter,completed,setCompleted,correct,setCorrect,opened,setOpened,fliped,setFliped}){
     
     function open(index){
         setOpened(index)

@@ -2,21 +2,20 @@ import React from "react";
 import parabuains from "./assets/party.png"
 import errou from "./assets/sad.png"
 
-export default function Footer({card, counter, completed, correct}){
-    console.log(correct)
+export default function Footer({card, counter, completed, correct, reset, target}){
     return(
         <>
             {
-                <DefaultFooter card={card} counter={counter} completed={completed}  correct={correct}/>           
+                <DefaultFooter card={card} counter={counter} completed={completed}  correct={correct} reset={reset} target={target}/>           
             }
         </>
     )
 }
 
-function DefaultFooter({card,counter,completed, correct}){
+function DefaultFooter({card,counter,completed,correct,reset,target}){
     return(
         <footer>
-            <Ending counter={counter} card={card} correct={correct}/>
+            <Ending counter={counter} card={card} correct={correct} reset={reset} target={target}/>
             <div><p>{counter}/{card.length} CONCLUÍDOS</p></div>
             <div className="icons">{completed.map((value)=>icons(value))}</div>
         </footer>
@@ -36,20 +35,23 @@ function icons(completed){
         }
 }
 
-function Ending ({counter,card,correct}){
+function Ending ({counter,card,correct,reset,target}){
+    target = Number(target);
     if(counter === card.length){
-        if(correct === counter){
+        if(correct >= target){
             return(
                 <div className="finaltxt">
-                    <div> <img src={parabuains}/> Parabéns! </div>
-                    <p>Você não esqueceu de nenhum flashcard!</p>
+                    <button onClick={reset}>Reiniciar Recall</button>
+                    <div> <img src={parabuains} alt="Parabens"/> Parabéns! </div>
+                    <p>Você atingiu sua meta! É sobre isso!</p>
                 </div>
             )
         }else{
            return(
             <div className="finaltxt">
-                <div><img src={errou}/> <span>Putz...</span></div>
-                <p>Ainda faltam alguns..Mas não desanime!</p>
+                <button onClick={reset}>Reiniciar Recall</button>
+                <div><img src={errou} alt="errou"/> <span>Putz...</span></div>
+                <p>Ainda faltam alguns...Mas não desanime!</p>
             </div>
             )
         }
