@@ -182,5 +182,66 @@ footer p{
     width: 30px;
 }
 
+.revealed-card{
+    width: 300px;
+    height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-color: #FFFFD4;
+
+    margin-bottom: 30px;
+
+    padding: 18px;
+
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    position: relative;
+}
+
+.revealed-card h4{
+    font-family: 'Recursive', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.box{
+    display: flex;
+}
+
+.box>div{
+    width: 90px;
+    height: 40px;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+    font-family: 'Recursive', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.erro{
+    background-color: #FF3030;
+}
+
+.quase{
+    background-color: #FF922E;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.zap{
+    background-color: #2FBE34;
+}
+
 
 /* Cards Variations */
