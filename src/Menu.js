@@ -4,7 +4,7 @@ import Footer from "./Footer"
 import React from "react"
 
 
-export default function Menu({setDisplay,target,setTarget,card,setWhich}){
+export default function Menu({setDisplay,target,setTarget,card,setWhich,setCard}){
     
 
     const [counter,setCounter] = React.useState(0);
@@ -21,7 +21,7 @@ export default function Menu({setDisplay,target,setTarget,card,setWhich}){
         setOpened(null);
         setFliped(null);
         setTarget("");
-        setWhich("");
+        setWhich({value:"JavaScript"});
     }
 
     return(

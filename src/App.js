@@ -9,7 +9,7 @@ export default function App(){
     const [display, setDisplay] = React.useState(true);
     const [target,setTarget] = React.useState("");
     const [which,setWhich] = React.useState({value: "JavaScript"});
-
+    
     let card = [];
 
     const Deck1 = [
