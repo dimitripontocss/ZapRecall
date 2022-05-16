@@ -86,6 +86,25 @@ body{
     font-size: 14px;
 }
 
+.MenuInicial select{
+    width: 200px;
+    height: 40px;
+
+    background-color: #FFFFFF;
+    
+    border-radius: 7px;
+    border: 0;
+
+    margin-bottom: 20px;
+
+    padding: 10px;
+
+    color: #FB6B6B;
+    font-family: 'Recursive', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
 /* Página inicial */
 
 /* Página Cards */
